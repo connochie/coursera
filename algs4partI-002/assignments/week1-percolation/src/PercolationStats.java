@@ -33,13 +33,11 @@ public class PercolationStats {
 
         Percolation percolation = new Percolation(9);
 
-
         percolation.open(1, 2);
         percolation.open(2, 2);
         percolation.open(3, 2);
         percolation.open(3, 3);
         percolation.open(4, 3);
-
         percolation.open(5, 3);
         percolation.open(6, 3);
         percolation.open(7, 3);
@@ -47,12 +45,12 @@ public class PercolationStats {
         percolation.open(8, 4);
         percolation.open(9, 4);
 
-        percolation.percolates();
+        boolean isFull = percolation.isFull(5,3);
+        boolean isNotFull = percolation.isFull(5,4);
 
-
-
-
-
+        percolation.print();
+        boolean percolates = percolation.percolates();
+        System.out.println("Percolates? " + (percolates ? "Yes." : "No."));
     }
 
 }
