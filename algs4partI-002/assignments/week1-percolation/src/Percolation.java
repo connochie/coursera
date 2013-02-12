@@ -11,21 +11,31 @@ public class Percolation {
     public Percolation(int N) {
         width = N;
 
-        uf = new QuickUnionUF(N * N);
+        // + 2 for virtual sites
+        uf = new QuickUnionUF((N * N) + 2);
 
+        // init N*N grid to blocked
         grid = new int[N][N];
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
                 grid[i][j] = 0;
             }
         }
+
+        // connect top row to virtual top site
+        for (int i = 1; i < width + 1; i++) {
+            uf.union(0, i);
+        }
+
+        // connect bottom row to virtual bottom site
+        for (int i = ((width * width) - width); i < (width * width) + 1; i++) {
+            uf.union((width * width) + 1, i);
+        }
+
     }
 
     // open site (row i, column j) if it is not already
     public void open(int i, int j) {
-
-//        i -= 1;
-//        j -= 1;
 
         if (!isOpen(i, j)) {
 
@@ -35,33 +45,29 @@ public class Percolation {
             // array[width * row + col] = value;
 
             // id of this newly opened site
-            int id = (width * (i - 1)) + j - 1;
+            int id = ((width * (i - 1)) + j - 1) + 1;
 
             // top
             if (isOpen(i - 1, j)) {
-                int top = (width * (i - 2)) + j - 1;
-                System.out.println("Unioning " + id + " " + top);
+                int top = ((width * (i - 2)) + j - 1) + 1;
                 uf.union(id, top);
             }
 
             // right
             if (isOpen(i, j + 1)) {
-                int right = (width * (i - 1)) + j + 1;
-                System.out.println("Unioning " + id + " " + right);
+                int right = ((width * (i - 1)) + j + 1) + 1;
                 uf.union(id, right);
             }
 
             // bottom
             if (isOpen(i + 1, j)) {
-                int bottom = (width * i) + j - 1;
-                System.out.println("Unioning " + id + " " + bottom);
+                int bottom = ((width * i) + j - 1) + 1;
                 uf.union(id, bottom);
             }
 
             // left
             if (isOpen(i, j - 1)) {
-                int left = (width * (i - 1)) + j - 2;
-                System.out.println("Unioning " + id + " " + left);
+                int left = ((width * (i - 1)) + j - 2) + 1;
                 uf.union(id, left);
             }
 
@@ -70,63 +76,37 @@ public class Percolation {
 
     // is site (row i, column j) open?
     public boolean isOpen(int i, int j) {
-
-        if (1 > i || i > width || 1 > j || j > width) {
-//            throw new IndexOutOfBoundsException(
-//                    String.format("Invalid grid indices: %d,%d", i, j)
-//            );
-
-            return false;
-        }
-
-        return grid[i - 1][j - 1] == 1;
+        return !(1 > i || i > width || 1 > j || j > width) && grid[i - 1][j - 1] == 1;
     }
 
     // is site (row i, column j) full?
     public boolean isFull(int i, int j) {
-        return false;
+        int id = ((width * (i - 1)) + j - 1) + 1;
+        return uf.connected(0, id);
     }
 
     // does the system percolate?
     public boolean percolates() {
-
-        print();
-
-        for (int i = ((width * width) - width); i < (width * width); i++) {
-            for (int j = 0; j < width; j++) {
-                if (uf.connected(i, j)) {
-                    System.out.println("Percolates? Yes.");
-                    return true;
-                }
-            }
-        }
-
-        System.out.println("Percolates? No.");
-
-        return false;
+        return uf.connected(0, (width * width) + 1);
     }
 
-    private void print() {
+    public void print() {
         System.out.println();
-
-        for (int i = 0; i < grid.length; i++) {
-            for (int j = 0; j < grid.length; j++) {
+        for (int i = 0; i < width; i++) {
+            for (int j = 0; j < width; j++) {
                 System.out.print(grid[i][j] + " ");
             }
             System.out.println();
 
         }
-
         System.out.println();
-
-        for (int i = 0; i < grid.length; i++) {
-            for (int j = 0; j < grid.length; j++) {
-                System.out.print(((i * grid.length) + j) + "\t");
+        for (int i = 0; i < width; i++) {
+            for (int j = 0; j < width; j++) {
+                System.out.print(((i * width) + j) + "\t");
             }
             System.out.println();
 
         }
         System.out.println();
-
     }
 }
