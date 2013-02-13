@@ -47,28 +47,44 @@ public class Percolation {
             // id of this newly opened site
             int id = ((width * (i - 1)) + j - 1) + 1;
 
-            // top
-            if (isOpen(i - 1, j)) {
-                int top = ((width * (i - 2)) + j - 1) + 1;
-                uf.union(id, top);
+            try {
+                // top
+                if (isOpen(i - 1, j)) {
+                    int top = ((width * (i - 2)) + j - 1) + 1;
+                    uf.union(id, top);
+                }
+            } catch (IndexOutOfBoundsException e) {
+                ;
             }
 
-            // right
-            if (isOpen(i, j + 1)) {
-                int right = ((width * (i - 1)) + j + 1) + 1;
-                uf.union(id, right);
+            try {
+                // right
+                if (isOpen(i, j + 1)) {
+                    int right = ((width * (i - 1)) + j + 1) + 1;
+                    uf.union(id, right);
+                }
+            } catch (IndexOutOfBoundsException e) {
+                ;
             }
 
-            // bottom
-            if (isOpen(i + 1, j)) {
-                int bottom = ((width * i) + j - 1) + 1;
-                uf.union(id, bottom);
+            try {
+                // bottom
+                if (isOpen(i + 1, j)) {
+                    int bottom = ((width * i) + j - 1) + 1;
+                    uf.union(id, bottom);
+                }
+            } catch (IndexOutOfBoundsException e) {
+                ;
             }
 
-            // left
-            if (isOpen(i, j - 1)) {
-                int left = ((width * (i - 1)) + j - 2) + 1;
-                uf.union(id, left);
+            try {
+                // left
+                if (isOpen(i, j - 1)) {
+                    int left = ((width * (i - 1)) + j - 2) + 1;
+                    uf.union(id, left);
+                }
+            } catch (IndexOutOfBoundsException e) {
+                ;
             }
 
         }
@@ -76,11 +92,28 @@ public class Percolation {
 
     // is site (row i, column j) open?
     public boolean isOpen(int i, int j) {
-        return !(1 > i || i > width || 1 > j || j > width) && grid[i - 1][j - 1] == 1;
+        if (i < 1 || width < i)
+            throw new IndexOutOfBoundsException(
+                    "Out of bounds: i = " + i + ", width = " + width
+            );
+        if (j < 1 || width < j)
+            throw new IndexOutOfBoundsException(
+                    "Out of bounds: j = " + j + ", width = " + width
+            );
+        return grid[i - 1][j - 1] == 1;
     }
 
     // is site (row i, column j) full?
     public boolean isFull(int i, int j) {
+        if (i < 1 || width < i)
+            throw new IndexOutOfBoundsException(
+                    "Out of bounds: i = " + i + ", width = " + width
+            );
+
+        if (j < 1 || width < j)
+            throw new IndexOutOfBoundsException(
+                    "Out of bounds: j = " + j + ", width = " + width
+            );
         int id = ((width * (i - 1)) + j - 1) + 1;
         return uf.find(id) == 0;
     }

@@ -6,11 +6,13 @@
     <ignored path=".idea/workspace.xml" />
     <file path="/Main.java" changelist="ec6138a4-81cd-409b-b63e-ad158e0c2307" time="1358522045490" ignored="false" />
     <file path="/Main2.java" changelist="ec6138a4-81cd-409b-b63e-ad158e0c2307" time="1358790712658" ignored="false" />
-    <file path="/Percolation.java" changelist="ec6138a4-81cd-409b-b63e-ad158e0c2307" time="1360715118568" ignored="false" />
-    <file path="/PercolationStats.java" changelist="ec6138a4-81cd-409b-b63e-ad158e0c2307" time="1360720816821" ignored="false" />
+    <file path="/Percolation.java" changelist="ec6138a4-81cd-409b-b63e-ad158e0c2307" time="1360770463778" ignored="false" />
+    <file path="/PercolationStats.java" changelist="ec6138a4-81cd-409b-b63e-ad158e0c2307" time="1360770751398" ignored="false" />
     <file path="/LoggingQuickUnionUF.java" changelist="ec6138a4-81cd-409b-b63e-ad158e0c2307" time="1360720580171" ignored="false" />
-    <file path="/fragment.java" changelist="ec6138a4-81cd-409b-b63e-ad158e0c2307" time="1360720846526" ignored="false" />
+    <file path="/fragment.java" changelist="ec6138a4-81cd-409b-b63e-ad158e0c2307" time="1360771172188" ignored="false" />
     <file path="/Dummy.txt" changelist="ec6138a4-81cd-409b-b63e-ad158e0c2307" time="1360678038052" ignored="false" />
+    <file path="/a.java" changelist="ec6138a4-81cd-409b-b63e-ad158e0c2307" time="1360768752169" ignored="false" />
+    <file path="/sample.java" changelist="ec6138a4-81cd-409b-b63e-ad158e0c2307" time="1360768690504" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +65,22 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint url="file://$PROJECT_DIR$/src/PercolationStats.java" line="59" class="PercolationStats" package="">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -75,28 +92,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Percolation.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Percolation.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Percolation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="94" column="13" selection-start="2389" selection-end="2389" vertical-scroll-proportion="0.2359932">
+            <state line="95" column="0" selection-start="2464" selection-end="2464" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QuickUnionUF.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/lib/algs4.jar!/QuickUnionUF.java">
+      <file leaf-file-name="WeightedQuickUnionUF.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="jar://$PROJECT_DIR$/lib/algs4.jar!/WeightedQuickUnionUF.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="16" selection-start="1115" selection-end="1115" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoggingQuickUnionUF.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/LoggingQuickUnionUF.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="49" selection-start="83" selection-end="83" vertical-scroll-proportion="0.0">
+            <state line="28" column="20" selection-start="950" selection-end="950" vertical-scroll-proportion="0.09549549">
               <folding />
             </state>
           </provider>
@@ -105,36 +113,7 @@
       <file leaf-file-name="PercolationStats.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PercolationStats.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="35" selection-start="1017" selection-end="1017" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Set.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar:///System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar!/java/util/Set.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="17" selection-start="156" selection-end="156" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StdRandom.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/lib/stdlib.jar!/StdRandom.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="114" column="22" selection-start="3369" selection-end="3369" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Math.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar:///System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar!/java/lang/Math.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="25" selection-start="1707" selection-end="1707" vertical-scroll-proportion="0.0">
+            <state line="75" column="44" selection-start="2076" selection-end="2076" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -143,16 +122,7 @@
       <file leaf-file-name="StdStats.java" pinned="false" current="false" current-in-tab="false">
         <entry file="jar://$PROJECT_DIR$/lib/stdlib.jar!/StdStats.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="214" column="102" selection-start="6389" selection-end="6389" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Integer.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar:///System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar!/java/lang/Integer.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="22" selection-start="1529" selection-end="1529" vertical-scroll-proportion="0.0">
+            <state line="152" column="31" selection-start="4500" selection-end="4500" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -179,16 +149,77 @@
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/Main2.java" />
         <option value="$PROJECT_DIR$/src/LoggingQuickUnionUF.java" />
-        <option value="$PROJECT_DIR$/src/PercolationStats.java" />
         <option value="$PROJECT_DIR$/src/Percolation.java" />
+        <option value="$PROJECT_DIR$/src/PercolationStats.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="14" />
-    <option name="y" value="22" />
-    <option name="width" value="1260" />
-    <option name="height" value="760" />
+    <option name="y" value="55" />
+    <option name="width" value="1265" />
+    <option name="height" value="703" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Abstraction issues</id>
+          </State>
+          <State>
+            <id>Android Lint</id>
+          </State>
+          <State>
+            <id>CSS</id>
+          </State>
+          <State>
+            <id>Code style issues</id>
+          </State>
+          <State>
+            <id>Code style issuesJavaScript</id>
+          </State>
+          <State>
+            <id>Cucumber</id>
+          </State>
+          <State>
+            <id>Groovy</id>
+          </State>
+          <State>
+            <id>Hibernate Issues</id>
+          </State>
+          <State>
+            <id>J2ME issues</id>
+          </State>
+          <State>
+            <id>JPA issues</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+          <State>
+            <id>Performance issues</id>
+          </State>
+          <State>
+            <id>Probable bugs</id>
+          </State>
+          <State>
+            <id>Probable bugsGroovy</id>
+          </State>
+          <State>
+            <id>SQL</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Abstraction issues</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -250,38 +281,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="percolation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="week1-percolation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stdlib.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="percolation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="week1-percolation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
@@ -296,7 +295,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
+    <property name="options.lastSelected" value="preferences.sourceCode.General" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
@@ -412,7 +411,7 @@
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="PercolationStats" />
       <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="9 100" />
+      <option name="PROGRAM_PARAMETERS" value="9 2" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="" />
@@ -469,7 +468,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="14" y="22" width="1260" height="760" extended-state="0" />
+    <frame x="14" y="55" width="1265" height="703" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -477,7 +476,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6046875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40308747" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -490,8 +489,8 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24958813" sideWeight="0.6703125" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296875" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24938475" sideWeight="0.55574614" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44425386" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -559,11 +558,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$PROJECT_DIR$/lib/algs4.jar!/RabinKarp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="13" selection-start="1269" selection-end="1269" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/lib/algs4.jar!/Shell.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="29" selection-start="782" selection-end="782" vertical-scroll-proportion="0.49837133" />
@@ -600,42 +594,28 @@
     </entry>
     <entry file="jar:///System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar!/java/lang/Integer.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="22" selection-start="1529" selection-end="1529" vertical-scroll-proportion="0.0">
+        <state line="37" column="22" selection-start="1529" selection-end="1529" vertical-scroll-proportion="0.8947368">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar:///System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar!/java/lang/Math.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="25" selection-start="1707" selection-end="1707" vertical-scroll-proportion="0.0">
+        <state line="51" column="25" selection-start="1707" selection-end="1707" vertical-scroll-proportion="3.9473684">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/stdlib.jar!/StdRandom.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="114" column="22" selection-start="3369" selection-end="3369" vertical-scroll-proportion="0.0">
+        <state line="114" column="22" selection-start="3369" selection-end="3369" vertical-scroll-proportion="0.8947368">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar:///System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar!/java/util/Set.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="17" selection-start="156" selection-end="156" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/algs4.jar!/QuickUnionUF.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="16" selection-start="1115" selection-end="1115" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/stdlib.jar!/StdStats.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="214" column="102" selection-start="6389" selection-end="6389" vertical-scroll-proportion="0.0">
+        <state line="6" column="17" selection-start="156" selection-end="156" vertical-scroll-proportion="0.39473686">
           <folding />
         </state>
       </provider>
@@ -647,18 +627,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PercolationStats.java">
+    <entry file="jar://$PROJECT_DIR$/lib/algs4.jar!/QuickUnionUF.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="35" selection-start="1017" selection-end="1017" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="40" column="16" selection-start="1115" selection-end="1115" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Percolation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="94" column="13" selection-start="2389" selection-end="2389" vertical-scroll-proportion="0.2359932">
+        <state line="95" column="0" selection-start="2464" selection-end="2464" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PercolationStats.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="75" column="44" selection-start="2076" selection-end="2076" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/stdlib.jar!/StdStats.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="152" column="31" selection-start="4500" selection-end="4500" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/algs4.jar!/WeightedQuickUnionUF.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="20" selection-start="950" selection-end="950" vertical-scroll-proportion="0.09549549">
           <folding />
         </state>
       </provider>

@@ -1,9 +1,6 @@
-import java.util.HashSet;
-import java.util.Set;
 
 public class PercolationStats {
 
-    private int N;
     private int T;
     private double[] thresholds;
 
@@ -16,7 +13,6 @@ public class PercolationStats {
             throw new IllegalArgumentException("T must be greater than 0");
         }
 
-        this.N = N;
         this.T = T;
 
         thresholds = new double[T];
@@ -35,21 +31,23 @@ public class PercolationStats {
                 if (!percolation.isOpen(i, j)) {
                     percolation.open(i, j);
                     o++;
-                    percolation.print();
                 }
             }
-            System.out.println(o);
             thresholds[t] = o;
+
+            percolation.print();
         }
     }
 
     // sample mean of percolation threshold
     public double mean() {
-        double sum = 0.0;
-        for (int i = 0; i < thresholds.length; i++) {
-            sum += thresholds[i];
-        }
-        return sum / T;
+//        double sum = 0.0;
+//        for (int i = 0; i < thresholds.length; i++) {
+//            sum += thresholds[i];
+//        }
+//        return sum / T;
+
+        return StdStats.mean(thresholds);
     }
 
     // sample standard deviation of percolation threshold
@@ -57,9 +55,11 @@ public class PercolationStats {
         double mean = mean();
         double numerator = 0.0;
         for (int i = 0; i < thresholds.length; i++) {
-            numerator += Math.pow(thresholds[i] - mean, 2);
+            numerator += ((thresholds[i] - mean) * (thresholds[i] - mean));
         }
         return Math.sqrt(numerator / T - 1);
+
+//        return StdStats.stddev(thresholds);
     }
 
     // returns lower bound of the 95% confidence interval
@@ -81,7 +81,10 @@ public class PercolationStats {
         PercolationStats stats = new PercolationStats(N, T);
         StdOut.println("mean\t\t\t\t\t\t= " + stats.mean());
         StdOut.println("stddev\t\t\t\t\t\t= " + stats.stddev());
-        StdOut.println("95% confidence interval\t\t= " + stats.confidenceLo() + ", " + stats.confidenceHi());
+        StdOut.println(
+                "95% confidence interval\t\t= " +
+                        stats.confidenceLo() + ", " + stats.confidenceHi()
+        );
     }
 
 }
