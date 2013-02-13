@@ -3,7 +3,7 @@ public class Percolation {
 
     private int width;
 
-    private QuickUnionUF uf;
+    private LoggingQuickUnionUF uf;
 
     private int[][] grid;
 
@@ -12,7 +12,7 @@ public class Percolation {
         width = N;
 
         // + 2 for virtual sites
-        uf = new QuickUnionUF((N * N) + 2);
+        uf = new LoggingQuickUnionUF((N * N) + 2);
 
         // init N*N grid to blocked
         grid = new int[N][N];
@@ -24,12 +24,12 @@ public class Percolation {
 
         // connect top row to virtual top site
         for (int i = 1; i < width + 1; i++) {
-            uf.union(0, i);
+            uf.union(i, 0);
         }
 
         // connect bottom row to virtual bottom site
-        for (int i = ((width * width) - width); i < (width * width) + 1; i++) {
-            uf.union((width * width) + 1, i);
+        for (int i = ((width * width) - width) + 1; i < (width * width) + 1; i++) {
+            uf.union(i, (width * width) + 1);
         }
 
     }
@@ -82,15 +82,17 @@ public class Percolation {
     // is site (row i, column j) full?
     public boolean isFull(int i, int j) {
         int id = ((width * (i - 1)) + j - 1) + 1;
-        return uf.connected(0, id);
+        return uf.find(id) == 0;
     }
 
     // does the system percolate?
     public boolean percolates() {
-        return uf.connected(0, (width * width) + 1);
+        return uf.find((width * width) + 1) == uf.find(0);
     }
 
     public void print() {
+        uf.print();
+
         System.out.println();
         for (int i = 0; i < width; i++) {
             for (int j = 0; j < width; j++) {

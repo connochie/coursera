@@ -1,56 +1,87 @@
+import java.util.HashSet;
+import java.util.Set;
 
 public class PercolationStats {
 
+    private int N;
+    private int T;
+    private double[] thresholds;
+
     // perform T independent computational experiments on an N-by-N grid
     public PercolationStats(int N, int T) {
+        if (N <= 0) {
+            throw new IllegalArgumentException("N must be greater than 0");
+        }
+        if (T <= 0) {
+            throw new IllegalArgumentException("T must be greater than 0");
+        }
 
+        this.N = N;
+        this.T = T;
 
+        thresholds = new double[T];
+
+        Percolation percolation;
+
+        for (int t = 0; t < T; t++) {
+            percolation = new Percolation(N);
+
+            int o = 0;
+            while (!percolation.percolates()) {
+
+                int i = StdRandom.uniform(1, N + 1);
+                int j = StdRandom.uniform(1, N + 1);
+
+                if (!percolation.isOpen(i, j)) {
+                    percolation.open(i, j);
+                    o++;
+                    percolation.print();
+                }
+            }
+            System.out.println(o);
+            thresholds[t] = o;
+        }
     }
 
     // sample mean of percolation threshold
     public double mean() {
-        return 0;
+        double sum = 0.0;
+        for (int i = 0; i < thresholds.length; i++) {
+            sum += thresholds[i];
+        }
+        return sum / T;
     }
 
     // sample standard deviation of percolation threshold
     public double stddev() {
-        return 0;
+        double mean = mean();
+        double numerator = 0.0;
+        for (int i = 0; i < thresholds.length; i++) {
+            numerator += Math.pow(thresholds[i] - mean, 2);
+        }
+        return Math.sqrt(numerator / T - 1);
     }
 
     // returns lower bound of the 95% confidence interval
     public double confidenceLo() {
-        return 0;
-
+        return mean() - ((1.96 * stddev()) / Math.sqrt(T));
     }
 
     // returns upper bound of the 95% confidence interval
     public double confidenceHi() {
-        return 0;
+        return mean() + ((1.96 * stddev()) / Math.sqrt(T));
     }
 
     // test client, described below
     public static void main(String[] args) {
 
-        Percolation percolation = new Percolation(9);
+        int N = Integer.parseInt(args[0]);
+        int T = Integer.parseInt(args[1]);
 
-        percolation.open(1, 2);
-        percolation.open(2, 2);
-        percolation.open(3, 2);
-        percolation.open(3, 3);
-        percolation.open(4, 3);
-        percolation.open(5, 3);
-        percolation.open(6, 3);
-        percolation.open(7, 3);
-        percolation.open(7, 4);
-        percolation.open(8, 4);
-        percolation.open(9, 4);
-
-        boolean isFull = percolation.isFull(5,3);
-        boolean isNotFull = percolation.isFull(5,4);
-
-        percolation.print();
-        boolean percolates = percolation.percolates();
-        System.out.println("Percolates? " + (percolates ? "Yes." : "No."));
+        PercolationStats stats = new PercolationStats(N, T);
+        StdOut.println("mean\t\t\t\t\t\t= " + stats.mean());
+        StdOut.println("stddev\t\t\t\t\t\t= " + stats.stddev());
+        StdOut.println("95% confidence interval\t\t= " + stats.confidenceLo() + ", " + stats.confidenceHi());
     }
 
 }
