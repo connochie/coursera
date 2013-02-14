@@ -20,7 +20,7 @@ import java.awt.Font;
 
 public class PercolationVisualizer {
     // delay in miliseconds (controls animation speed)
-    private final static int delay = 100;
+    private final static int delay = 1;
 
     // draw N-by-N percolation system
     public static void draw(Percolation perc, int N) {
@@ -69,13 +69,18 @@ public class PercolationVisualizer {
         // repeatedly read in sites to open and draw resulting system
         draw(perc, N);
         StdDraw.show(delay);
+        int callsToOpen = 0;
         while (!in.isEmpty()) {
             int i = in.readInt();
             int j = in.readInt();
+            System.out.println(""+i + " " +  j);
             perc.open(i, j);
+            callsToOpen++;
             draw(perc, N);
             StdDraw.show(delay);
         }
+
+        System.out.println("Calls to open: " + callsToOpen);
     }
 
     // random input

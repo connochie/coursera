@@ -6,6 +6,121 @@ import static org.junit.Assert.assertTrue;
 public class PercolationTests {
 
     @Test
+    public void testGreeting57() {
+        assertFalse(simulateFromFile("etc/greeting57.txt"));
+    }
+
+    @Test
+    public void testHeart25() {
+        assertFalse(simulateFromFile("etc/heart25.txt"));
+    }
+
+    @Test
+    public void testInput1No() {
+        assertFalse(simulateFromFile("etc/input1-no.txt"));
+    }
+
+    @Test
+    public void testInput1() {
+        assertTrue(simulateFromFile("etc/input1.txt"));
+    }
+
+    @Test
+    public void testInput2No() {
+        assertFalse(simulateFromFile("etc/input2-no.txt"));
+    }
+
+    @Test
+    public void testInput2() {
+        assertTrue(simulateFromFile("etc/input2.txt"));
+    }
+
+    @Test
+    public void testInput3() {
+        assertTrue(simulateFromFile("etc/input3.txt"));
+    }
+
+    @Test
+    public void testInput4() {
+        assertTrue(simulateFromFile("etc/input4.txt"));
+    }
+
+    @Test
+    public void testInput5() {
+        assertTrue(simulateFromFile("etc/input5.txt"));
+    }
+
+    @Test
+    public void testInput6() {
+        assertTrue(simulateFromFile("etc/input6.txt"));
+    }
+
+    @Test
+    public void testInput7() {
+        assertTrue(simulateFromFile("etc/input7.txt"));
+    }
+
+    @Test
+    public void testInput8No() {
+        assertFalse(simulateFromFile("etc/input8-no.txt"));
+    }
+
+    @Test
+    public void testInput8() {
+        assertTrue(simulateFromFile("etc/input8.txt"));
+    }
+
+    @Test
+    public void testInput10No() {
+        assertFalse(simulateFromFile("etc/input10-no.txt"));
+    }
+
+    @Test
+    public void testInput10() {
+        assertTrue(simulateFromFile("etc/input10.txt"));
+    }
+
+    @Test
+    public void testInput20() {
+        assertTrue(simulateFromFile("etc/input20.txt"));
+    }
+
+    @Test
+    public void testInput50() {
+        assertTrue(simulateFromFile("etc/input50.txt"));
+    }
+
+    @Test
+    public void testSnake13() {
+        assertTrue(simulateFromFile("etc/snake13.txt"));
+    }
+
+    @Test
+    public void testSnake101() {
+        assertTrue(simulateFromFile("etc/snake101.txt"));
+    }
+
+
+    private static boolean simulateFromFile(String filename) {
+        In in = new In(filename);
+        int N = in.readInt();
+        Percolation perc = new Percolation(N);
+
+        // repeatedly read in sites to open and draw resulting system
+        int callsToOpen = 0;
+        while (!in.isEmpty()) {
+            int i = in.readInt();
+            int j = in.readInt();
+            perc.open(i, j);
+            callsToOpen++;
+        }
+
+        System.out.println(filename + " - calls to open: " + callsToOpen);
+        return perc.percolates();
+    }
+
+
+    @Test
     public void testBlocked() {
         int size = 10;
         Percolation percolation = new Percolation(size);
