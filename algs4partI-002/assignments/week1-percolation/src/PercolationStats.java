@@ -1,8 +1,9 @@
 
 public class PercolationStats {
 
-    private int T;
     private double[] thresholds;
+
+    private int N;
 
     // perform T independent computational experiments on an N-by-N grid
     public PercolationStats(int N, int T) {
@@ -13,7 +14,7 @@ public class PercolationStats {
             throw new IllegalArgumentException("T must be greater than 0");
         }
 
-        this.T = T;
+        this.N = N;
 
         thresholds = new double[T];
 
@@ -21,6 +22,7 @@ public class PercolationStats {
 
         for (int t = 0; t < T; t++) {
             percolation = new Percolation(N);
+//            percolation.print();
 
             int o = 0;
             while (!percolation.percolates()) {
@@ -32,44 +34,42 @@ public class PercolationStats {
                     percolation.open(i, j);
                     o++;
                 }
+
+//                percolation.print();
             }
             thresholds[t] = o;
 
-            percolation.print();
+//            percolation.print();
         }
     }
 
     // sample mean of percolation threshold
     public double mean() {
-//        double sum = 0.0;
-//        for (int i = 0; i < thresholds.length; i++) {
-//            sum += thresholds[i];
-//        }
-//        return sum / T;
-
-        return StdStats.mean(thresholds);
+        return StdStats.mean(getThresholdPercentages());
     }
 
     // sample standard deviation of percolation threshold
     public double stddev() {
-        double mean = mean();
-        double numerator = 0.0;
-        for (int i = 0; i < thresholds.length; i++) {
-            numerator += ((thresholds[i] - mean) * (thresholds[i] - mean));
-        }
-        return Math.sqrt(numerator / T - 1);
+        return StdStats.stddev(getThresholdPercentages());
+    }
 
-//        return StdStats.stddev(thresholds);
+    private double[] getThresholdPercentages() {
+        double NN = ((double) N * (double) N);
+        double[] tmp = new double[thresholds.length];
+        for (int i = 0; i < thresholds.length; i++) {
+            tmp[i] = thresholds[i] / NN;
+        }
+        return tmp;
     }
 
     // returns lower bound of the 95% confidence interval
     public double confidenceLo() {
-        return mean() - ((1.96 * stddev()) / Math.sqrt(T));
+        return mean() - ((1.96 * stddev()) / Math.sqrt(thresholds.length));
     }
 
     // returns upper bound of the 95% confidence interval
     public double confidenceHi() {
-        return mean() + ((1.96 * stddev()) / Math.sqrt(T));
+        return mean() + ((1.96 * stddev()) / Math.sqrt(thresholds.length));
     }
 
     // test client, described below
@@ -85,6 +85,7 @@ public class PercolationStats {
                 "95% confidence interval\t\t= " +
                         stats.confidenceLo() + ", " + stats.confidenceHi()
         );
+
     }
 
 }
