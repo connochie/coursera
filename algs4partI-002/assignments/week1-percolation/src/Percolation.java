@@ -21,54 +21,49 @@ public class Percolation {
                 grid[i][j] = false;
             }
         }
-
     }
-
 
     // open site (row i, column j) if it is not already
     public void open(int i, int j) {
 
-
         int id = id(i, j);
-
-        if (id == 1) {
-            int e = 3;
-        }
-
-        if (i == N && j == N) {
-            int s = 9;
-        }
-
-        System.out.println("opening " + id + " (" + i + "," + j + ")");
         int above = above(i, j);
         int left = left(i, j);
         int right = right(i, j);
         int below = below(i, j);
 
+        // if top row
+        if (i == 1) {
+            // union with virtual top
+            uf.union(0, id);
+        }
+
         //if bottom row
         if (i == N) {
             // if left right or above are full
             if (isFull(i, above(j)) || isFull(i, below(j)) || isFull(above(i), j)) {
-                uf.union(0, BOTTOM);
+                uf.union(id, BOTTOM);
+//                uf.union(0, BOTTOM);
             }
         }
 
-        // if top row
-        if (i == 1) {
+        // for all bottom sites
+        for (int k = 0; k < N; k++) {
+            // if open
+            if (grid[N - 1][k]) {
 
-            // union with virtual root
-            uf.union(0, id);
+                int bottom = id(N, k + 1);
+                int _below = id(below(i), j);
+                int _left = id(i, above(j));
+                int _right = id(i, below(j));
 
-            // all bottom sites
-            for (int k = 0; k < N; k++) {
-                // if open
-                if (grid[N - 1][k]) {
-
-                    // if below is connected to this open bottom row site (N, k+1)
-                    if (uf.connected(id(below(i), j), id(N, k + 1))) {
-                        // connect bottom site with virtual bottom
-                        uf.union(id(N, k + 1), BOTTOM);
-                    }
+                // if below, left or right is connected to this open bottom row site (N, k+1)
+                if (uf.connected(_below, bottom)
+                        || uf.connected(_left, bottom)
+                        || uf.connected(_right, bottom)
+                        ) {
+                    // connect bottom site with virtual bottom
+                    uf.union(bottom, BOTTOM);
                 }
             }
         }
@@ -90,23 +85,8 @@ public class Percolation {
             uf.union(id, right);
         }
 
-
-        // if this is a top row site, union with virtual top site
-
-
-        // if this is a bottom row site
-        // if above is full, also union this with virtual bottom
-        if (bottomRow(id) && isFull(above(i), j)) {
-            uf.union(id, BOTTOM);
-        }
-
-
         // actually open this site
         grid[i - 1][j - 1] = true;
-    }
-
-    private boolean bottomRow(int id) {
-        return id < BOTTOM && id > (N * N) - N - 1;
     }
 
     // is site (row i, column j) open?
@@ -168,26 +148,4 @@ public class Percolation {
                     "Out of bounds: j = " + j + ", N = " + N
             );
     }
-
-//    public void print() {
-//        uf.print();
-//
-//        System.out.println();
-//        for (int i = 0; i < N; i++) {
-//            for (int j = 0; j < N; j++) {
-//                System.out.print((grid[i][j] ? 1 : 0) + " ");
-//            }
-//            System.out.println();
-//
-//        }
-//        System.out.println();
-//        for (int i = 0; i < N; i++) {
-//            for (int j = 1; j < N + 1; j++) {
-//                System.out.print(((i * N) + j) + "\t");
-//            }
-//            System.out.println();
-//
-//        }
-//        System.out.println("--------------------------");
-//    }
 }
