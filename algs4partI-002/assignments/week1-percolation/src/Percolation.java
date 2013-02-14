@@ -21,36 +21,57 @@ public class Percolation {
                 grid[i][j] = false;
             }
         }
+
     }
+
 
     // open site (row i, column j) if it is not already
     public void open(int i, int j) {
 
 
         int id = id(i, j);
-//        System.out.println("opening " + id);
+
+        if (id == 1) {
+            int e = 3;
+        }
+
+        if (i == N && j == N) {
+            int s = 9;
+        }
+
+        System.out.println("opening " + id + " (" + i + "," + j + ")");
         int above = above(i, j);
         int left = left(i, j);
         int right = right(i, j);
         int below = below(i, j);
 
-        // for each open bottom row site b
-        // if find(b) == left, right or below
-        // union b with virtual bottom
-
-        for (int k = 0; k < N; k++) {
-            // if open
-            if (grid[N - 1][k]) {
-
-                int b = id(N, k);
-                int rootOfB = uf.find(b);
-
-                if (rootOfB == left || rootOfB == right || rootOfB == below) {
-                    uf.union(b, BOTTOM);
-                }
+        //if bottom row
+        if (i == N) {
+            // if left right or above are full
+            if (isFull(i, above(j)) || isFull(i, below(j)) || isFull(above(i), j)) {
+                uf.union(0, BOTTOM);
             }
         }
 
+        // if top row
+        if (i == 1) {
+
+            // union with virtual root
+            uf.union(0, id);
+
+            // all bottom sites
+            for (int k = 0; k < N; k++) {
+                // if open
+                if (grid[N - 1][k]) {
+
+                    // if below is connected to this open bottom row site (N, k+1)
+                    if (uf.connected(id(below(i), j), id(N, k + 1))) {
+                        // connect bottom site with virtual bottom
+                        uf.union(id(N, k + 1), BOTTOM);
+                    }
+                }
+            }
+        }
 
         // if above, below, left, right are open, union with them
         if (isOpen(above(i), j)) {
@@ -71,9 +92,6 @@ public class Percolation {
 
 
         // if this is a top row site, union with virtual top site
-        if (id <= N) {
-            uf.union(0, id);
-        }
 
 
         // if this is a bottom row site
