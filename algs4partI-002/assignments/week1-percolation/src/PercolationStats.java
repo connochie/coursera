@@ -22,7 +22,6 @@ public class PercolationStats {
 
         for (int t = 0; t < T; t++) {
             percolation = new Percolation(N);
-//            percolation.print();
 
             int o = 0;
             while (!percolation.percolates()) {
@@ -35,11 +34,8 @@ public class PercolationStats {
                     o++;
                 }
 
-//                percolation.print();
             }
             thresholds[t] = o;
-
-//            percolation.print();
         }
     }
 

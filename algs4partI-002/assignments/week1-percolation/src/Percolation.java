@@ -58,7 +58,7 @@ public class Percolation {
                 int _left = id(i, above(j));
                 int _right = id(i, below(j));
 
-                // if below, left or right is connected to this open bottom row site (N, k+1)
+                // if above, below, left or right is connected to this open bottom row site (N, k+1)
                 if (uf.connected(_above, bottom)
                         || uf.connected(_below, bottom)
                         || uf.connected(_left, bottom)
