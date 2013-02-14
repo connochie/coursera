@@ -53,12 +53,14 @@ public class Percolation {
             if (grid[N - 1][k]) {
 
                 int bottom = id(N, k + 1);
+                int _above = id(above(i), j);
                 int _below = id(below(i), j);
                 int _left = id(i, above(j));
                 int _right = id(i, below(j));
 
                 // if below, left or right is connected to this open bottom row site (N, k+1)
-                if (uf.connected(_below, bottom)
+                if (uf.connected(_above, bottom)
+                        || uf.connected(_below, bottom)
                         || uf.connected(_left, bottom)
                         || uf.connected(_right, bottom)
                         ) {
