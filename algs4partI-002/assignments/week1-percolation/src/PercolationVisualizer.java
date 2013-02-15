@@ -28,7 +28,7 @@ public class PercolationVisualizer {
         StdDraw.setPenColor(StdDraw.BLACK);
         StdDraw.setXscale(0, N);
         StdDraw.setYscale(0, N);
-        StdDraw.filledSquare(N/2.0, N/2.0, N/2.0);
+        StdDraw.filledSquare(N / 2.0, N / 2.0, N / 2.0);
 
         // draw N-by-N grid
         int opened = 0;
@@ -37,12 +37,10 @@ public class PercolationVisualizer {
                 if (perc.isFull(row, col)) {
                     StdDraw.setPenColor(StdDraw.BOOK_LIGHT_BLUE);
                     opened++;
-                }
-                else if (perc.isOpen(row, col)) {
+                } else if (perc.isOpen(row, col)) {
                     StdDraw.setPenColor(StdDraw.WHITE);
                     opened++;
-                }
-                else
+                } else
                     StdDraw.setPenColor(StdDraw.BLACK);
                 StdDraw.filledSquare(col + 0.5 - 1, N - row - 0.5 + 1, 0.45);
             }
@@ -51,9 +49,9 @@ public class PercolationVisualizer {
         // write status text
         StdDraw.setFont(new Font("SansSerif", Font.PLAIN, 12));
         StdDraw.setPenColor(StdDraw.BLACK);
-        StdDraw.text(.25*N, -N*.025, opened + " open sites");
-        if (perc.percolates()) StdDraw.text(.75*N, -N*.025, "percolates");
-        else                   StdDraw.text(.75*N, -N*.025, "does not percolate");
+        StdDraw.text(.25 * N, -N * .025, opened + " open sites");
+        if (perc.percolates()) StdDraw.text(.75 * N, -N * .025, "percolates");
+        else StdDraw.text(.75 * N, -N * .025, "does not percolate");
 
     }
 
@@ -64,7 +62,7 @@ public class PercolationVisualizer {
         Percolation perc = new Percolation(N);
 
         // turn on animation mode
-        StdDraw.show(0); 
+        StdDraw.show(0);
 
         // repeatedly read in sites to open and draw resulting system
         draw(perc, N);
@@ -73,7 +71,7 @@ public class PercolationVisualizer {
         while (!in.isEmpty()) {
             int i = in.readInt();
             int j = in.readInt();
-            System.out.println(""+i + " " +  j);
+            System.out.println("" + i + " " + j);
             perc.open(i, j);
             callsToOpen++;
             draw(perc, N);
@@ -106,14 +104,14 @@ public class PercolationVisualizer {
     }
 
     public static void main(String[] args) {
-        if (args.length >= 2) throw new RuntimeException("Command line argument should be a filename or integer");
+        if (args.length >= 2)
+            throw new RuntimeException("Command line argument should be a filename or integer");
         else if (args.length == 0) simulateFromRandom(10);
         else {
             try {
                 int N = Integer.parseInt(args[0]);
                 simulateFromRandom(N);
-            }
-            catch (NumberFormatException e) {
+            } catch (NumberFormatException e) {
                 String filename = args[0];
                 simulateFromFile(filename);
             }

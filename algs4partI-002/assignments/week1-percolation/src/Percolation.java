@@ -58,14 +58,17 @@ public class Percolation {
                 int _left = id(i, above(j));
                 int _right = id(i, below(j));
 
+                int rootOfBottom = uf.find(bottom);
+
                 // if above, below, left or right is connected to this open bottom row site (N, k+1)
-                if (uf.connected(_above, bottom)
-                        || uf.connected(_below, bottom)
-                        || uf.connected(_left, bottom)
-                        || uf.connected(_right, bottom)
+                if (uf.find(_above) == rootOfBottom
+                        || uf.find(_below) == rootOfBottom
+                        || uf.find(_left) == rootOfBottom
+                        || uf.find(_right) == rootOfBottom
                         ) {
                     // connect bottom site with virtual bottom
                     uf.union(bottom, BOTTOM);
+                    break;
                 }
             }
         }
