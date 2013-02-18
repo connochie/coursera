@@ -9,7 +9,7 @@
     <file path="/Percolation.java" changelist="ec6138a4-81cd-409b-b63e-ad158e0c2307" time="1361193909125" ignored="false" />
     <file path="/PercolationStats.java" changelist="ec6138a4-81cd-409b-b63e-ad158e0c2307" time="1360807235087" ignored="false" />
     <file path="/LoggingQuickUnionUF.java" changelist="ec6138a4-81cd-409b-b63e-ad158e0c2307" time="1360790752514" ignored="false" />
-    <file path="/fragment.java" changelist="ec6138a4-81cd-409b-b63e-ad158e0c2307" time="1361194805807" ignored="false" />
+    <file path="/fragment.java" changelist="ec6138a4-81cd-409b-b63e-ad158e0c2307" time="1361208881520" ignored="false" />
     <file path="/Dummy.txt" changelist="ec6138a4-81cd-409b-b63e-ad158e0c2307" time="1361188485325" ignored="false" />
     <file path="/a.java" changelist="ec6138a4-81cd-409b-b63e-ad158e0c2307" time="1360768752169" ignored="false" />
     <file path="/sample.java" changelist="ec6138a4-81cd-409b-b63e-ad158e0c2307" time="1360768690504" ignored="false" />
@@ -155,7 +155,7 @@
       <file leaf-file-name="PercolationVisualizer.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/PercolationVisualizer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="38" selection-start="957" selection-end="957" vertical-scroll-proportion="0.1797005">
+            <state line="22" column="38" selection-start="957" selection-end="957" vertical-scroll-proportion="0.29916897">
               <folding />
             </state>
           </provider>
@@ -367,7 +367,7 @@
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="PercolationVisualizer" />
       <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="etc/snake101.txt" />
+      <option name="PROGRAM_PARAMETERS" value="etc/greeting57.txt" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="" />
@@ -893,7 +893,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PercolationVisualizer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="38" selection-start="957" selection-end="957" vertical-scroll-proportion="0.1797005">
+        <state line="22" column="38" selection-start="957" selection-end="957" vertical-scroll-proportion="0.29916897">
           <folding />
         </state>
       </provider>
