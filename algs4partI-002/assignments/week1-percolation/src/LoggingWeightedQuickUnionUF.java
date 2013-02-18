@@ -35,10 +35,10 @@ public class LoggingWeightedQuickUnionUF extends WeightedQuickUnionUF {
 //                } else {
                 System.out.print(i + ":" + i1 + "\t");
 //                }
-                if (((i) % 4) == 0) System.out.println();
+                if (((i) % 14) == 0) System.out.println();
             }
 
-            System.out.println("17:" + id[id.length - 1] + "\t");
+//            System.out.println("17:" + id[id.length - 1] + "\t");
 
         } catch (IllegalAccessException e) {
             e.printStackTrace();
